@@ -1,0 +1,12 @@
+{
+  "name": "ts-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "denisos",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
