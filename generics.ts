@@ -1,6 +1,6 @@
 
-function simpleState<T>(initial? : T): [() => T | undefined, (newState: T) => void] {
-  let state: T | undefined = initial;
+function simpleState<T>(initial : T): [() => T, (newState: T) => void] {
+  let state: T = initial;
 
   return [
     () => state,
@@ -15,3 +15,5 @@ console.log(getCount());
 setCount(55);
 console.log(getCount());
 
+const [getClientName, setCustName] = simpleState<string | null>(null);
+setCustName("jane")

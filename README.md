@@ -18,7 +18,8 @@ compile to js: `npx tsc functions.ts`
 * arrays type is: string[] or Array<string> e.g. const list: Array<number> = [1,3]
 * objects: can use special "Record" e.g. const ids: Record<number, string> = { 10: "a"}
 * typescript supports function overloading; write a number of overload signatures followed by the implementation which must match all the overloads (including options and unions). Then write code inside fn to switch on param types.
-* exclamation "!" will coalesc
+* exclamation "!" will coalesc, but prefer to avoid and use optional chaining instead (for exampel)
+* generics, can set generic type when define e.g. simpleState<string | null>(null);
 
 * see Jacks discord channel for interview questions for js and ts
 
