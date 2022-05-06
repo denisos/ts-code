@@ -26,10 +26,13 @@ function findHouses(
 function findHouses(houses: string | House[], filter?: (house: House) => boolean): HouseWithID[] {
   let theHouses = (typeof houses === 'string') ? JSON.parse(houses) : houses;
 
-  return (!filter ? theHouses : theHouses.filter(filter)).map((ahouse: House) => ({ 
-    ...ahouse, 
-    id: theHouses.indexOf(ahouse)
-  }));
+  // want to keep ids consistent over calls given same input
+  let housesWithIds = theHouses.map((ahouse: House, id: number) => ({ 
+      ...ahouse, 
+      id
+    }));
+  
+  return (!filter) ? housesWithIds : housesWithIds.filter(filter)
 }
 
 console.log("Harkonnen house ", findHouses(houses, ({ name }) => name === "Harkonnen"));
@@ -38,4 +41,8 @@ console.log("Nonsense house ", findHouses(houses, ({ name }) => name === "Nonsen
 
 console.log("Atreides house ",
   findHouses(JSON.stringify(houses), ({ name }) => name === "Atreides")
+);
+
+console.log("all houses ",
+  findHouses(JSON.stringify(houses))
 );
