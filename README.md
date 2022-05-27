@@ -27,6 +27,10 @@ The [typescipt handbook](https://www.typescriptlang.org/docs/handbook/2/narrowin
      * checking truthiness is narrowing, checking equality is narrowing, in operator is narrowing
 * typescript supports function overloading; write a number of overload signatures followed by the implementation which must match all the overloads (including options and unions). Then write code inside fn to switch on param types.
 * exclamation "!" is a non null assertion; it will coalesc, but prefer to avoid ! and use optional chaining instead (for example) OR discrinimated unions
+* readonly: can use readonly on property of type or "Readonly" built in ts utility type or as const
+  * e.g. type ReadOnlyCat = Readonly<Cat>
+  * e.g. const reallyConst = [1,2,3] as const;  // this makes immutable array
+    * 
 * generics are fundamental to ts 
   * can set generic type when declare e.g. simpleState<string | null>(null);
 
